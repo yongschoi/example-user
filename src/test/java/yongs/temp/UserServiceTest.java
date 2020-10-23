@@ -8,10 +8,21 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
+import org.springframework.test.context.TestExecutionListeners;
+import org.springframework.test.context.support.DependencyInjectionTestExecutionListener;
+import org.springframework.transaction.annotation.Transactional;
 
+import yongs.temp.config.DatabaseConfig;
 import yongs.temp.service.UserService;
 import yongs.temp.vo.User;
 
+@Transactional
+@Import(DatabaseConfig.class)
+@TestExecutionListeners({
+	// Bean 을 DI 받기 위해 선언해줘야 한다.
+	DependencyInjectionTestExecutionListener.class
+})
 @SpringBootTest
 class UserServiceTest {    
 	@Autowired

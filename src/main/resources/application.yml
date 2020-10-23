@@ -1,0 +1,70 @@
+spring:
+  profiles:
+    active: localhost
+---
+spring:
+  profiles: localhost
+  application:
+    name: example-user
+    
+server:
+  port: 8080
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+
+app:
+  datasource:
+    jdbc-url: jdbc:mariadb://localhost:3306/temp
+    driverClassName: org.mariadb.jdbc.Driver
+    username: scott
+    password: tiger
+    maximum-pool-size: 5
+
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+    instanceId: ${spring.application.name}:${random.value}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      
+---
+spring:
+  profiles: docker
+  application:
+    name: example-user
+    
+server:
+  port: 8080
+
+logging:
+  level:
+    yongs:
+      temp: INFO
+
+app:
+  datasource:
+    jdbc-url: jdbc:mariadb://maria-db:3306/temp
+    driverClassName: org.mariadb.jdbc.Driver
+    username: scott
+    password: tiger
+    maximum-pool-size: 10
+                         
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: eureka-server
+  client:
+    registerWithEureka: true 
+    fetchRegistry: true
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+            

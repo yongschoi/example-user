@@ -20,15 +20,14 @@ class UserServiceTest {
 	@Test
 	@DisplayName("모든 사용자 테스트")
 	void user_rating() {
-		int expectedSize = 5;	
+		int expectedSize = 7;	
 		List<User> list = userService.findByScoreRating();
 		assertEquals(expectedSize, list.size());	
 	}
 	@Test
 	@DisplayName("0점 사용자 제외 테스트")
 	void user_rating_exclude_zero() {
-		int expectedSize = 3;
-		// int expectedSize = 4;
+		int expectedSize = 4;
 
 		List<User> list = userService.findByScoreRatingExcludeZero();
 		assertEquals(expectedSize, list.size());	

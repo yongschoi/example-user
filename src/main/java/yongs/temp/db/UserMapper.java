@@ -8,7 +8,7 @@ import yongs.temp.vo.User;
 
 @Mapper
 public interface UserMapper {
-	public List<User> getUsers();
-
-	public User getUser(String email);
+	public List<User> findAll();
+	public User findByEmail(String email);
+	public void insertUser(User user);
 }

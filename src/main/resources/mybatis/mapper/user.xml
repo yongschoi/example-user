@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="yongs.temp.db.UserMapper">
-    <select id="getUsers" resultType="yongs.temp.vo.User">
+    <select id="findAll" resultType="yongs.temp.vo.User">
         SELECT id, email, name, score, photo FROM `example_user`
     </select>
+    <select id="findByEmail" parameterType="String" resultType="yongs.temp.vo.User">
+        SELECT id, email, name, score, photo FROM `example_user` WHERE email = #{email} 
+    </select> 
+    <insert id="insertUser" parameterType="yongs.temp.vo.User">
+    	INSERT INTO `example_user` (email, name, score, photo) VALUES ( #{email}, #{name}, #{score}, #{photo} )
+    </insert>
 </mapper>

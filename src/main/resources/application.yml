@@ -37,7 +37,7 @@ eureka:
       
 ---
 spring:
-  profiles: docker
+  profiles: container
   application:
     name: example-user
     

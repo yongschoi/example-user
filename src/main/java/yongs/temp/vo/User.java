@@ -6,7 +6,7 @@ public class User {
 	private String name;
 	private int score;
 	private String photo;
-
+	
 	public String getPhoto() {
 		return photo;
 	}

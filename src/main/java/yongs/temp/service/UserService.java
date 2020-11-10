@@ -13,19 +13,25 @@ import yongs.temp.vo.User;
 public class UserService {
     @Autowired
     UserMapper mapper;
-
-    public List<User> findByAll() {
-        return mapper.findAll();
+    @Autowired
+    MinioService minio;
+    
+    public List<User> findByAll() throws Exception {
+    	List<User> users = mapper.findAll();
+    	for (User user : users) {
+			user.setPhotoUrl(minio.getObjectUrl("example-user", user.getPhotoName()));
+		}
+        return users;
     }
 
-    public List<User> findByScoreRating() {
-        return mapper.findAll().stream()
+    public List<User> findByScoreRating() throws Exception {
+        return findByAll().stream()
                 .sorted( (a, b) -> b.getScore() > a.getScore() ? 1 : -1)
                 .collect(Collectors.toList());
     }
 
-    public List<User> findByScoreRatingExcludeZero() {
-        return mapper.findAll().stream()
+    public List<User> findByScoreRatingExcludeZero() throws Exception {
+        return findByAll().stream()
                 .filter(a -> !((Integer)a.getScore()).equals(0) )
                 .sorted( (a, b) -> b.getScore() > a.getScore() ? 1 : -1)
                 .collect(Collectors.toList());
@@ -33,9 +39,5 @@ public class UserService {
  
     public User findByEmail(String email) {
         return mapper.findByEmail(email);
-    }
-    
-    public void insertUser(User user) {
-        mapper.insertUser(user);
     }
 }

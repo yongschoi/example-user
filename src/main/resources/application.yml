@@ -1,12 +1,7 @@
 spring:
   profiles:
-    active: localhost
+    active: window-dev
 ---
-spring:
-  profiles: localhost
-  application:
-    name: example-user
-    
 server:
   port: 8081
 
@@ -14,6 +9,11 @@ logging:
   level:
     yongs:
       temp: DEBUG
+      
+spring:
+  profiles: window-dev
+  application:
+    name: example-user
 
 app:
   datasource:
@@ -23,6 +23,10 @@ app:
     password: tiger
     maximum-pool-size: 5
 
+minio:
+  host: localhost
+  port: 9000
+  
 eureka:
   instance:
     preferIpAddress: true
@@ -59,11 +63,15 @@ app:
     username: scott
     password: tiger
     maximum-pool-size: 10
-                         
+
+minio:
+  host: minio
+  port: 9000
+                           
 eureka:
   instance:
     preferIpAddress: true
-    hostname: eureka-server
+    hostname: eureka
   client:
     registerWithEureka: true 
     fetchRegistry: true

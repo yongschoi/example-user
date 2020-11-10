@@ -65,7 +65,7 @@ app:
     maximum-pool-size: 10
 
 minio:
-  host: localhost
+  host: minio
   port: 9000
                            
 eureka:

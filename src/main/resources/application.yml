@@ -58,7 +58,7 @@ app:
     # docker 컨테이너로 실행되므로 maria-db로 접근이 가능하지만
     # gradle test를 docker 컨테이너에서 수행하면   maria-db로 접근
     # gradle test를 docker 컨테이너가 아닌 node에서 수행할 경우에서 db ip를 명시해 줘야 한다. 
-    jdbc-url: jdbc:mariadb://maria-db:3306/temp
+    jdbc-url: jdbc:mariadb://maria-db:3306/example
     driverClassName: org.mariadb.jdbc.Driver
     username: scott
     password: tiger

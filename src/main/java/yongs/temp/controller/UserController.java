@@ -17,31 +17,32 @@ import yongs.temp.vo.User;
 @RequestMapping("/user")
 public class UserController {
 	private Logger logger = LoggerFactory.getLogger(UserController.class);
-    @Autowired
-    UserService userService;
+	@Autowired
+	UserService userService;
 
-    @GetMapping("/all")
-    public List<User> findByAll() throws Exception {
-        logger.debug("example-hello|UserController|findByAll()");
-        return userService.findByAll();
-    }
+	@GetMapping("/all")
+	public List<User> findByAll() throws Exception {
+		logger.debug("example-hello|UserController|findByAll()");
+		return userService.findByAll();
+	}
 
-    @GetMapping("/score")
-    public List<User> findByScoreRating() throws Exception {
-    	logger.debug("example-hello|UserController|findByScoreRating()");
-    	// score 별로 리스팅
-    	return userService.findByScoreRating();
-    }
+	@GetMapping("/score")
+	public List<User> findByScoreRating() throws Exception {
+		logger.debug("example-hello|UserController|findByScoreRating()");
+		// score 별로 리스팅
+		return userService.findByScoreRating();
+	}
 
-    @GetMapping("/excludezero")
-    public List<User> findByScoreRatingExcludeZero() throws Exception {
-    	logger.debug("example-hello|UserController|findByScoreRatingExcludeZero()");
-        // score 별로 리스팅 (0점 제외)
-    	return userService.findByScoreRatingExcludeZero();
-    }
-    @GetMapping("/{email}")
-    public User findByEmail(@PathVariable("email") String email) throws Exception {
-        logger.debug("example-hello|UserController|findByEmail()");
-        return userService.findByEmail(email);
-    }
+	@GetMapping("/excludezero")
+	public List<User> findByScoreRatingExcludeZero() throws Exception {
+		logger.debug("example-hello|UserController|findByScoreRatingExcludeZero()");
+		// score 별로 리스팅 (0점 제외)
+		return userService.findByScoreRatingExcludeZero();
+	}
+
+	@GetMapping("/{email}")
+	public User findByEmail(@PathVariable("email") String email) throws Exception {
+		logger.debug("example-hello|UserController|findByEmail()");
+		return userService.findByEmail(email);
+	}
 }

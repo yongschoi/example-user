@@ -5,6 +5,6 @@
         SELECT id, email, name, score, photoName FROM `example_user`
     </select>
     <select id="findByEmail" parameterType="String" resultType="yongs.temp.vo.User">
-        SELECT id, email, name, score FROM `example_user` WHERE email = #{email} 
+        SELECT id, email, name, score, photoName FROM `example_user` WHERE email = #{email} 
     </select>
 </mapper>

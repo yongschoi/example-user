@@ -14,7 +14,7 @@ import yongs.temp.config.MinioConfig;
 @Service
 public class MinioService {	
 	private static final String accessKey = "Q3AM3UQ867SPQQA43P2F";
-	private static final String secretKey = "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG";
+	private static final String secretKey = "Q3AM3UQ867SPQQA43P2F";
 	
 	private MinioClient minioClient;
 	

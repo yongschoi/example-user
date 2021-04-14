@@ -13,8 +13,8 @@ import yongs.temp.config.MinioConfig;
 
 @Service
 public class MinioService {	
-	private static final String accessKey = "minioadmin";
-	private static final String secretKey = "minioadmin";
+	private static final String accessKey = "AKIAIOSFODNN7EXAMPLE";
+	private static final String secretKey = "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY";
 	 
 	private MinioClient minioClient;
 	

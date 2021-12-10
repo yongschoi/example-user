@@ -28,14 +28,12 @@ public class UserController {
 	@GetMapping("/score")
 	public List<User> findByScoreRating() throws Exception {
 		log.debug("UserController.findByScoreRating()");
-		// score 별로 리스팅
 		return userService.findByScoreRating();
 	}
 
 	@GetMapping("/excludezero")
 	public List<User> findByScoreRatingExcludeZero() throws Exception {
 		log.debug("UserController.findByScoreRatingExcludeZero()");
-		// score 별로 리스팅 (0점 제외)
 		return userService.findByScoreRatingExcludeZero();
 	}
 

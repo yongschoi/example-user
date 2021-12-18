@@ -40,6 +40,6 @@ public class UserController {
 	@GetMapping("/{email}")
 	public User findByEmail(@PathVariable("email") String email) throws Exception {
 		log.debug("UserController.findByEmail()");
-		return userService.findByEmail(email);
+		return userService.findByEmail(email); 	
 	}
 }

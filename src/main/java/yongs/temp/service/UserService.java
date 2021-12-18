@@ -37,7 +37,7 @@ public class UserService {
 
 	public User findByEmail(String email) throws Exception {
 		User user = mapper.findByEmail(email);
-		user.setPhotoUrl(minio.getObjectUrl("example-user", user.getPhoto()));		
+		user.setPhotoUrl(minio.getObjectUrl("example-user", user.getPhoto()));			
 		return user;
     }
 }

@@ -28,8 +28,9 @@ dependencies {
 	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 	implementation 'org.springframework.boot:spring-boot-configuration-processor'
 	implementation 'io.minio:minio:8.3.4'
-	implementation 'com.squareup.okhttp3:okhttp:4.9.1'
-	
+	// for io.minio
+	implementation 'com.squareup.okhttp3:okhttp:4.9.1' 
+		
 	compileOnly 'org.projectlombok:lombok'
 	
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'

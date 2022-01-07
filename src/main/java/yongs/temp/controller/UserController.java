@@ -37,7 +37,7 @@ public class UserController {
 		return userService.findByScoreRatingExcludeZero();
 	}
 
-	@GetMapping("/{email}")
+	@GetMapping("/email/{email}")
 	public User findByEmail(@PathVariable("email") String email) throws Exception {
 		log.debug("UserController.findByEmail()");
 		return userService.findByEmail(email); 	

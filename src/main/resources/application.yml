@@ -99,7 +99,7 @@ eureka:
     fetchRegistry: true
     enabled: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}/eureka/
       
 minio: 
   host: minio

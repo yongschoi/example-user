@@ -71,7 +71,7 @@ spring:
   application:
     name: example-user
   datasource:
-    url: jdbc:mariadb://maria/example
+    url: jdbc:mariadb://maria:3306/example
     driverClassName: org.mariadb.jdbc.Driver
     username: scott
     password: tiger
@@ -99,7 +99,7 @@ eureka:
     fetchRegistry: true
     enabled: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}/eureka/
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
       
 minio: 
   host: minio

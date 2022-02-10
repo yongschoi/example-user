@@ -62,7 +62,7 @@ server:
 logging:
   level:
     yongs:
-      temp: INFO
+      temp: DEBUG
       
 spring:
   config:

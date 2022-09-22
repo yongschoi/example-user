@@ -3,7 +3,6 @@ CREATE TABLE example.`user` (
 	email varchar(50) NOT NULL,
 	name varchar(50) NULL,
 	score SMALLINT UNSIGNED NULL,
-	photo varchar(100) NULL,
 	CONSTRAINT user_PK PRIMARY KEY (id),
 	CONSTRAINT user_UN UNIQUE KEY (email)
 )
@@ -12,12 +11,21 @@ DEFAULT CHARSET=utf8mb4
 COLLATE=utf8mb4_general_ci;
 CREATE INDEX user_email_IDX USING BTREE ON example.`user` (email);
 
-
-INSERT INTO `user` (`id`, `email`, `name`, `score`, `photo`) VALUES
-	(7, 'jessica@kakao.com', 'Jessica Alba', 000, 'jessica@kakao.com.jpg'),
-	(6, 'john@vuetifyjs.com', 'John Leider', 091, 'john@vuetifyjs.com.png'),
-	(5, 'lisa@gmail.com', 'Lalisa Manobal', 089, 'lisa@gmail.com.jpg'),
-	(4, 'taylor@naver.com', 'Taylor Swift', 000, 'taylor@naver.com.jpg'),
-	(3, 'billie@naver.com', 'Billie Eilish', 092, 'billie@naver.com.jpg'),
-	(2, 'janny@gmail.com', 'Janny', 088, 'janny@gmail.com.jpg'),
-	(1, 'yongs@naver.com', 'Yongs', 095, 'yongs@naver.com.jpg');
+INSERT INTO example.`user` (email,name,score) VALUES
+	 ('yongs@naver.com','Yongs',99),
+	 ('janny@gmail.com','Janny',70),
+	 ('billie@naver.com','Billie Eilish',90),
+	 ('taylor@naver.com','Taylor Swift',88),
+	 ('lisa@gmail.com','Lalisa Manobal',91),
+	 ('john@vuetifyjs.com','John Leider',95),
+	 ('jessica@kakao.com','Jessica Alba',85),
+	 ('ariana@gmail.com','Ariana Grande',0),
+	 ('jordan@naver.com','Michael Jordan',87),
+	 ('han@naver.com','한예슬',81),
+	 ('hong@naver.com','홍길동',91),
+	 ('son@kakao.com','손흥민',83),
+	 ('kang@naver.com','강다현',80),
+	 ('kim@gmail.com','김연아',77),
+	 ('jun@naver.com','전도연',79),
+	 ('neymar@gmail.com','Neymar',70),
+	 ('song@kakao.com','송혜교',83);

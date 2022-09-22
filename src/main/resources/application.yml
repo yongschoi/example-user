@@ -28,6 +28,10 @@ spring:
     hikari:
       connection-timeout: 10000
       maximum-pool-size: 5
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 mybatis:
   configuration:
@@ -54,6 +58,16 @@ eureka:
 minio: 
   host: localhost
   port: 9000
+
+pagehelper: # https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md
+  helper-dialect: mariadb   
+  page-size-zero: false  
+  offset-as-page-num: false  
+  row-bounds-with-count: false  
+  auto-runtime-dialect: false  
+  close-conn: true  
+  default-count: true
+  reasonable: true # 범위가 넘어가는 pageNum이 들어올때 가능한 값으로 변경
   
 ---
 server:
@@ -78,7 +92,11 @@ spring:
     hikari:
       connection-timeout: 10000
       maximum-pool-size: 5
-
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+      
 mybatis:
   configuration:
     multiple-result-sets-enabled: false
@@ -104,3 +122,13 @@ eureka:
 minio: 
   host: minio
   port: 9000
+  
+pagehelper: # https://github.com/pagehelper/Mybatis-PageHelper/blob/master/wikis/en/HowToUse.md
+  helper-dialect: mariadb   
+  page-size-zero: false  
+  offset-as-page-num: false  
+  row-bounds-with-count: false  
+  auto-runtime-dialect: false  
+  close-conn: true  
+  default-count: true
+  reasonable: true # 범위가 넘어가는 pageNum이 들어올때 가능한 값으로 변경
